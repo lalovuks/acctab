@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACCTAB - Professional Accounting Services</title>
+    <!-- Favicon -->
+<link rel="icon" type="image/jpeg" href="acctab.jpg">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            text-align: center;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(2, 48, 71, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav:hover {
+            background: rgba(2, 48, 71, 0.9);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+        }
+
+        nav a {
+            color: #8ecae6;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffafcc;
+        }
+
+        /* Sections */
+        section {
+            min-height: 100vh;
+            padding: 6rem 2rem 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Parallax Background */
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        /* Section 1 - About */
+        #about {
+            background: linear-gradient(135deg, #003566 0%, #023047 100%);
+            color: #8ecae6;
+        }
+
+        #about::before {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><circle cx="200" cy="200" r="100" fill="%238ecae6"/><circle cx="800" cy="600" r="150" fill="%23ffafcc"/><circle cx="1000" cy="300" r="80" fill="%23fb8500"/></svg>');
+        }
+
+        #about h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            color: #ffafcc;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        #about p {
+            font-size: 1.3rem;
+            font-weight: bold;
+            max-width: 900px;
+            line-height: 2;
+            margin-bottom: 3rem;
+            color: #8ecae6;
+        }
+
+        .logo {
+            width: 300px;
+            height: 300px;
+            background: #8ecae6;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: bold;
+            color: #023047;
+            box-shadow: 0 10px 40px rgba(142, 202, 230, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Section 2 - Services */
+        #services {
+            background: linear-gradient(135deg, #8ecae6 0%, #023047 100%);
+            color: #003566;
+        }
+
+        #services::before {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect x="100" y="100" width="200" height="200" fill="%23003566"/><rect x="700" y="400" width="250" height="250" fill="%23fb8500"/></svg>');
+        }
+
+        #services h2 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 3rem;
+            color: #023047;
+            text-transform: uppercase;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 40px rgba(251, 133, 0, 0.4);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #fb8500;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            font-weight: bold;
+            line-height: 1.8;
+            color: #023047;
+            margin-bottom: 1.5rem;
+        }
+
+        .details-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #fb8500, #d9684e);
+            color: #003566;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 0 20px rgba(251, 133, 0, 0.6);
+            animation: wobble 3s ease-in-out infinite, glow 2s ease-in-out infinite;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .details-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 40px rgba(251, 133, 0, 0.9);
+        }
+
+        @keyframes wobble {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-3deg); }
+            75% { transform: rotate(3deg); }
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(251, 133, 0, 0.6); }
+            50% { box-shadow: 0 0 40px rgba(255, 175, 204, 0.9); }
+        }
+
+        /* Section 3 - Contact */
+        #contact {
+            background: linear-gradient(135deg, #023047 0%, #003566 100%);
+            color: #8ecae6;
+        }
+
+        #contact h2 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 3rem;
+            color: #ffafcc;
+            text-transform: uppercase;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-item {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fb8500;
+            animation: pulse 2s ease-in-out infinite;
+            background: rgba(251, 133, 0, 0.1);
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            border: 2px solid #fb8500;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 10px rgba(251, 133, 0, 0.3); }
+            50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(251, 133, 0, 0.6); }
+        }
+
+        .hours {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #8ecae6;
+            margin: 2rem 0;
+            line-height: 2;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            border: 3px solid #fb8500;
+            border-radius: 15px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #003566;
+            padding: 3rem 2rem;
+            color: #8ecae6;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: #25D366;
+            color: white;
+            padding: 1.5rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.3rem;
+            transition: all 0.3s;
+            animation: bounce 2s ease-in-out infinite;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-btn:hover {
+            background: #20BA5A;
+            transform: scale(1.1);
+            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.6);
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .whatsapp-icon {
+            font-size: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            #about h1 {
+                font-size: 2rem;
+            }
+
+            #about p {
+                font-size: 1rem;
+            }
+
+            .logo {
+                width: 200px;
+                height: 200px;
+                font-size: 2rem;
+            }
+
+            #services h2, #contact h2 {
+                font-size: 2rem;
+            }
+
+            .contact-item {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Section 1: About -->
+    <section id="about">
+        <h1>ACCTAB</h1>
+        <p>
+            ACCTAB is a forward-thinking accounting firm dedicated to delivering precise, reliable, and strategically driven financial services for businesses of all sizes. With a commitment to transparency and long-term client success, ACCTAB provides tailored accounting solutions that empower organizations to make confident, data-backed decisions.
+        </p>
+        <img src="acctab.jpg" alt="ACCTAB / Bica logo" width="170" height="170" style="border-radius: 50px";>
+    </section>
+
+    <!-- Section 2: Services -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>Accounting</h3>
+                <p>
+                    Bica's accounting services involve preparing, reviewing, and maintaining accurate financial records to ensure businesses have a clear and reliable picture of their financial position. These services support informed decision-making by producing compliant statements, tracking financial performance, and giving clients timely insights into their operations.
+                </p>
+                <a href="https://wa.me/26773263337?text=Hi%2C%20I%20would%20like%20more%20details%20about%20your%20Accounting%20services." class="details-btn" target="_blank">Get More Details</a>
+            </div>
+            <div class="service-card">
+                <h3>Payroll</h3>
+                <p>
+                    Bica's payroll services manage the entire salary administration process, ensuring that employees are paid accurately, on time, and in accordance with statutory requirements. This includes handling deductions, taxes, compliance reporting, and payroll records so businesses can reduce administrative burden and avoid costly errors.
+                </p>
+                <a href="https://wa.me/26773263337?text=Hi%2C%20I%20would%20like%20more%20details%20about%20your%20Payroll%20services." class="details-btn" target="_blank">Get More Details</a>
+            </div>
+            <div class="service-card">
+                <h3>Bookkeeping</h3>
+                <p>
+                    Bica's bookkeeping services provide systematic recording and organization of daily financial transactions, ensuring that all income, expenses, and financial movements are captured correctly. By maintaining clean and up-to-date books, businesses gain the foundation needed for smooth audits, accurate reporting, and better financial management.
+                </p>
+                <a href="https://wa.me/26773263337?text=Hi%2C%20I%20would%20like%20more%20details%20about%20your%20Bookkeeping%20services." class="details-btn" target="_blank">Get More Details</a>
+            </div>
+            <div class="service-card">
+                <h3>Accounting Advisory Services</h3>
+                <p>
+                    Bica's accounting advisory services help businesses interpret and apply complex accounting standards, ensuring financial statements are accurate, compliant, and aligned with regulatory frameworks. These services also guide clients through specialized transactions—such as mergers, restructures, or new reporting requirements—so they can make confident financial decisions.
+                </p>
+                <a href="https://wa.me/26773263337?text=Hi%2C%20I%20would%20like%20more%20details%20about%20your%20Accounting%20Advisory%20services." class="details-btn" target="_blank">Get More Details</a>
+            </div>
+            <div class="service-card">
+                <h3>Tax Services</h3>
+                <p>
+                    Bica provides comprehensive tax services that include tax planning, compliance, and advisory to help businesses meet their legal obligations while optimizing their tax position. The firm ensures clients remain fully aligned with evolving tax regulations, reducing risk and identifying opportunities for savings.
+                </p>
+                <a href="https://wa.me/26773263337?text=Hi%2C%20I%20would%20like%20more%20details%20about%20your%20Tax%20services." class="details-btn" target="_blank">Get More Details</a>
+            </div>
+            <div class="service-card">
+                <h3>Company Secretarial Services</h3>
+                <p>
+                    Bica's company secretarial services ensure that businesses meet all corporate governance and statutory filing requirements, maintaining full compliance with local company laws. This includes maintaining company records, preparing resolutions, managing annual returns, and supporting directors with regulatory guidance to keep the business legally sound and well-organized.
+                </p>
+                <a href="https://wa.me/26773263337?text=Hi%2C%20I%20would%20like%20more%20details%20about%20your%20Company%20Secretarial%20services." class="details-btn" target="_blank">Get More Details</a>
+            
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Contact -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <div class="contact-item">📞 +267 73 263 337</div>
+            <div class="contact-item">📍 Plot 14014 Unit 8, Francistown, Botswana</div>
+            <div class="contact-item">✉️ acctab@acctabbw.com</div>
+        </div>
+        <div class="hours">
+            <strong>Opening Hours:</strong><br>
+            Monday - Thursday: 08:00 - 17:00<br>
+            Friday: 08:00 - 16:00<br>
+            Open 5 Working Days
+        </div>
+        
+        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1rDkRr_GlROXBlM6Wz5VYIlx0pQUOCKo&ehbc=2E312F"  width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <a href="https://wa.me/26773263337" class="whatsapp-btn" target="_blank">
+            <span class="whatsapp-icon">💬</span>
+            Contact Us on WhatsApp
+        </a>
+    </footer>
+</body>
+</html>
