@@ -3,71 +3,279 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACCTAB - Professional Accounting Services</title>
+    <title>ACCTAB - Professional Accounting Services | BICA Registered Non-Audit Firm</title>
+    <meta name="description" content="ACCTAB is a BICA Registered Non-Audit Firm delivering precise, reliable and strategically driven accounting, bookkeeping, payroll, tax and advisory services in Francistown, Botswana.">
+    <meta name="keywords" content="Accountant in Botswana, Accounting Services Botswana, Bookkeeping Botswana, Tax Consultant Botswana, Payroll Services Botswana, BICA Registered Accountant">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.acctabbw.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ACCTAB - Professional Accounting Services">
+    <meta property="og:description" content="BICA Registered Non-Audit Firm providing professional accounting, bookkeeping, payroll, tax and advisory services.">
+    <meta property="og:image" content="acctab.jpg">
+    <meta name="twitter:card" content="summary">
+
     <!-- Favicon -->
-<link rel="icon" type="image/jpeg" href="acctab.jpg">
+    <link rel="icon" type="image/jpeg" href="acctab.jpg">
+    <link rel="apple-touch-icon" href="acctab.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AccountingService",
+      "name": "ACCTAB",
+      "description": "BICA Registered Non-Audit Firm providing professional accounting, bookkeeping, payroll, tax and advisory services.",
+      "image": "acctab.jpg",
+      "telephone": "+26773263337",
+      "email": "acctab@acctabbw.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Plot 14014 Unit 8",
+        "addressLocality": "Francistown",
+        "addressCountry": "BW"
+      },
+      "openingHours": ["Mo-Th 08:00-17:00", "Fr 08:00-16:00"]
+    }
+    </script>
 
     <style>
+        :root {
+            --navy: #0D1B2A;
+            --navy-2: #14263B;
+            --royal: #1E5EFF;
+            --gold: #C8A24C;
+            --white: #FFFFFF;
+            --light: #F8F9FB;
+            --dark-text: #202124;
+            --muted: #666666;
+            --green: #1AA36F;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow-x: hidden;
+        html {
             scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+            color: var(--dark-text);
+            background: var(--navy);
             text-align: center;
         }
 
-        /* Navigation */
+        h1, h2, h3, .brand-name {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+        }
+
+        /* ============ Navigation ============ */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(2, 48, 71, 0.7);
-            backdrop-filter: blur(10px);
-            padding: 1rem 2rem;
+            background: transparent;
+            padding: 0.85rem 2rem;
             z-index: 1000;
-            transition: all 0.3s ease;
+            transition: background 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
-        nav:hover {
-            background: rgba(2, 48, 71, 0.9);
+        nav.scrolled {
+            background: rgba(13, 27, 42, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+            padding: 0.6rem 2rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+
+        .brand-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--white);
+            padding: 3px;
+            object-fit: contain;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35), 0 0 0 2px rgba(200, 162, 76, 0.55);
+            transition: transform 0.4s ease;
+        }
+
+        .brand:hover .brand-logo {
+            transform: rotate(-8deg) scale(1.08);
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            line-height: 1.15;
+            position: relative;
+            overflow: hidden;
+            padding: 2px 6px 3px 2px;
+        }
+
+        .brand-name {
+            font-weight: 800;
+            font-size: 1.35rem;
+            letter-spacing: 2.5px;
+            color: var(--white);
+            text-align: left;
+        }
+
+        .brand-tag {
+            font-weight: 700;
+            font-size: 0.52rem;
+            letter-spacing: 1.6px;
+            color: var(--gold);
+            text-transform: uppercase;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        /* Looping glisten & shine sweeping across the brand text every 5 seconds */
+        .brand-text::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -120%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(105deg,
+                transparent 0%,
+                rgba(255, 255, 255, 0.15) 35%,
+                rgba(255, 255, 255, 0.85) 50%,
+                rgba(200, 162, 76, 0.45) 62%,
+                transparent 100%);
+            transform: skewX(-20deg);
+            animation: shine 5s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes shine {
+            0%   { left: -120%; }
+            18%  { left: 160%; }
+            100% { left: 160%; }
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            justify-content: center;
-            gap: 3rem;
+            align-items: center;
+            gap: 2.2rem;
         }
 
-        nav a {
-            color: #8ecae6;
+        nav ul a {
+            color: #dbe6f5;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
+            font-weight: 600;
+            font-size: 1rem;
+            position: relative;
+            padding: 0.3rem 0;
             transition: color 0.3s;
         }
 
-        nav a:hover {
-            color: #ffafcc;
+        nav ul a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--royal), var(--gold));
+            transition: width 0.35s ease;
+            border-radius: 2px;
         }
 
-        /* Sections */
+        nav ul a:hover {
+            color: var(--gold);
+        }
+
+        nav ul a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--royal), #4a7dff);
+            color: var(--white) !important;
+            padding: 0.6rem 1.4rem;
+            border-radius: 30px;
+            font-weight: 700;
+            box-shadow: 0 4px 18px rgba(30, 94, 255, 0.45);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .nav-cta::after {
+            display: none;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 26px rgba(200, 162, 76, 0.6);
+            color: var(--white) !important;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 6px;
+            z-index: 1100;
+        }
+
+        .hamburger span {
+            width: 26px;
+            height: 3px;
+            background: var(--white);
+            border-radius: 3px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+        /* ============ Sections ============ */
         section {
             min-height: 100vh;
-            padding: 6rem 2rem 4rem;
+            padding: 7rem 2rem 5rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             position: relative;
+            overflow: hidden;
         }
 
-        /* Parallax Background */
+        /* Subtle decorative parallax layer */
         section::before {
             content: '';
             position: absolute;
@@ -75,77 +283,278 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-attachment: fixed;
             background-size: cover;
             background-position: center;
-            z-index: -1;
-            opacity: 0.1;
+            z-index: 0;
+            opacity: 0.07;
+            pointer-events: none;
         }
 
-        /* Section 1 - About */
+        section > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.9s ease, transform 0.9s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============ Section 1 - About / Hero ============ */
         #about {
-            background: linear-gradient(135deg, #003566 0%, #023047 100%);
-            color: #8ecae6;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(30, 94, 255, 0.25), transparent 45%),
+                radial-gradient(circle at 85% 80%, rgba(200, 162, 76, 0.18), transparent 40%),
+                linear-gradient(135deg, #0D1B2A 0%, #14263B 100%);
+            color: #dbe6f5;
         }
 
         #about::before {
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><circle cx="200" cy="200" r="100" fill="%238ecae6"/><circle cx="800" cy="600" r="150" fill="%23ffafcc"/><circle cx="1000" cy="300" r="80" fill="%23fb8500"/></svg>');
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><circle cx="200" cy="200" r="100" fill="%231E5EFF"/><circle cx="800" cy="600" r="150" fill="%23C8A24C"/><circle cx="1000" cy="300" r="80" fill="%23FFFFFF"/></svg>');
+            animation: drift 18s ease-in-out infinite alternate;
+        }
+
+        @keyframes drift {
+            from { transform: translateY(0) scale(1); }
+            to   { transform: translateY(-30px) scale(1.05); }
+        }
+
+        .hero-eyebrow {
+            display: inline-block;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            border: 1px solid rgba(200, 162, 76, 0.5);
+            padding: 0.45rem 1.2rem;
+            border-radius: 30px;
+            margin-bottom: 1.6rem;
+            background: rgba(200, 162, 76, 0.08);
+            backdrop-filter: blur(6px);
         }
 
         #about h1 {
             font-size: 3.5rem;
-            font-weight: bold;
-            margin-bottom: 2rem;
-            color: #ffafcc;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--white);
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 6px;
+            background: linear-gradient(90deg, #FFFFFF 0%, #C8A24C 50%, #FFFFFF 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: goldflow 6s linear infinite;
+        }
+
+        @keyframes goldflow {
+            to { background-position: 200% center; }
         }
 
         #about p {
-            font-size: 1.3rem;
-            font-weight: bold;
+            font-size: 1.2rem;
+            font-weight: 500;
             max-width: 900px;
             line-height: 2;
-            margin-bottom: 3rem;
-            color: #8ecae6;
+            margin-bottom: 2.5rem;
+            color: #b9c8dc;
         }
 
-        .logo {
-            width: 300px;
-            height: 300px;
-            background: #8ecae6;
-            border-radius: 20px;
+        .hero-badges {
             display: flex;
-            align-items: center;
+            flex-wrap: wrap;
             justify-content: center;
-            font-size: 3rem;
-            font-weight: bold;
-            color: #023047;
-            box-shadow: 0 10px 40px rgba(142, 202, 230, 0.3);
-            animation: float 3s ease-in-out infinite;
+            gap: 0.8rem;
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            backdrop-filter: blur(8px);
+            color: #dbe6f5;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.55rem 1.2rem;
+            border-radius: 30px;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .badge:hover {
+            transform: translateY(-4px);
+            border-color: var(--gold);
+            box-shadow: 0 8px 22px rgba(200, 162, 76, 0.25);
+        }
+
+        .badge .tick {
+            color: var(--green);
+            margin-right: 0.35rem;
+        }
+
+        .hero-ctas {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .btn-primary, .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 1rem 2.2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--royal), #4a7dff);
+            color: var(--white);
+            box-shadow: 0 6px 25px rgba(30, 94, 255, 0.45);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 10px 35px rgba(200, 162, 76, 0.55);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(200, 162, 76, 0.12);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(200, 162, 76, 0.3);
+        }
+
+        .btn-primary .arrow {
+            transition: transform 0.3s;
+        }
+
+        .btn-primary:hover .arrow {
+            transform: translateX(5px);
+        }
+
+        /* Floating statistics cards */
+        .hero-stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 1.4rem 2rem;
+            min-width: 170px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+            animation: float 4s ease-in-out infinite;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .stat-card:nth-child(2) { animation-delay: 0.6s; }
+        .stat-card:nth-child(3) { animation-delay: 1.2s; }
+        .stat-card:nth-child(4) { animation-delay: 1.8s; }
+
+        .stat-card:hover {
+            border-color: var(--gold);
+        }
+
+        .stat-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--gold);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #b9c8dc;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 0.3rem;
+        }
+
+        .logo-frame {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 1.2rem;
+            display: inline-flex;
+            box-shadow: 0 15px 50px rgba(30, 94, 255, 0.3), 0 0 0 3px rgba(200, 162, 76, 0.4);
+            animation: float 3.5s ease-in-out infinite;
+        }
+
+        .logo-frame img {
+            width: 170px;
+            height: 170px;
+            object-fit: contain;
+            display: block;
         }
 
         @keyframes float {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(-16px); }
         }
 
-        /* Section 2 - Services */
+        /* ============ Section 2 - Services ============ */
         #services {
-            background: linear-gradient(135deg, #8ecae6 0%, #023047 100%);
-            color: #003566;
+            background: linear-gradient(180deg, var(--light) 0%, #edf1f7 100%);
+            color: var(--dark-text);
         }
 
         #services::before {
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect x="100" y="100" width="200" height="200" fill="%23003566"/><rect x="700" y="400" width="250" height="250" fill="%23fb8500"/></svg>');
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect x="100" y="100" width="200" height="200" rx="24" fill="%231E5EFF"/><rect x="700" y="400" width="250" height="250" rx="24" fill="%23C8A24C"/></svg>');
+        }
+
+        .section-eyebrow {
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--royal);
+            margin-bottom: 0.8rem;
         }
 
         #services h2 {
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 3rem;
-            color: #023047;
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+            color: var(--navy);
             text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .gold-divider {
+            width: 70px;
+            height: 4px;
+            border-radius: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--royal));
+            margin: 0 auto 3rem;
         }
 
         .service-grid {
@@ -157,284 +566,621 @@
         }
 
         .service-card {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
+            background: rgba(255, 255, 255, 0.92);
+            padding: 2.2rem 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(13, 27, 42, 0.06);
+            box-shadow: 0 6px 25px rgba(13, 27, 42, 0.08);
+            transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--royal), var(--gold));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 40px rgba(251, 133, 0, 0.4);
+            box-shadow: 0 18px 45px rgba(30, 94, 255, 0.18);
+            border-color: rgba(200, 162, 76, 0.4);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            animation: float 4s ease-in-out infinite;
         }
 
         .service-card h3 {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 1.35rem;
+            font-weight: 700;
             margin-bottom: 1rem;
-            color: #fb8500;
+            color: var(--navy);
         }
 
         .service-card p {
-            font-size: 1rem;
-            font-weight: bold;
-            line-height: 1.8;
-            color: #023047;
-            margin-bottom: 1.5rem;
+            font-size: 0.98rem;
+            font-weight: 400;
+            line-height: 1.85;
+            color: var(--muted);
+            margin-bottom: 1.6rem;
+            flex-grow: 1;
         }
 
         .details-btn {
             display: inline-block;
-            background: linear-gradient(135deg, #fb8500, #d9684e);
-            color: #003566;
-            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--royal), #4a7dff);
+            color: var(--white);
+            padding: 0.85rem 1.8rem;
             border-radius: 30px;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            box-shadow: 0 0 20px rgba(251, 133, 0, 0.6);
-            animation: wobble 3s ease-in-out infinite, glow 2s ease-in-out infinite;
-            transition: all 0.3s;
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: 0 5px 18px rgba(30, 94, 255, 0.35);
+            transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
             border: none;
+            align-self: center;
         }
 
         .details-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 40px rgba(251, 133, 0, 0.9);
+            transform: translateY(-3px) scale(1.04);
+            box-shadow: 0 10px 30px rgba(200, 162, 76, 0.55);
         }
 
-        @keyframes wobble {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(-3deg); }
-            75% { transform: rotate(3deg); }
-        }
-
-        @keyframes glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(251, 133, 0, 0.6); }
-            50% { box-shadow: 0 0 40px rgba(255, 175, 204, 0.9); }
-        }
-
-        /* Section 3 - Contact */
+        /* ============ Section 3 - Contact ============ */
         #contact {
-            background: linear-gradient(135deg, #023047 0%, #003566 100%);
-            color: #8ecae6;
+            background:
+                radial-gradient(circle at 80% 15%, rgba(30, 94, 255, 0.2), transparent 45%),
+                linear-gradient(135deg, #14263B 0%, #0D1B2A 100%);
+            color: #dbe6f5;
+        }
+
+        #contact .section-eyebrow {
+            color: var(--gold);
         }
 
         #contact h2 {
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 3rem;
-            color: #ffafcc;
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+            color: var(--white);
             text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .contact-info {
             display: flex;
-            flex-direction: column;
-            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
             margin-bottom: 3rem;
+            max-width: 1000px;
         }
 
         .contact-item {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #fb8500;
-            animation: pulse 2s ease-in-out infinite;
-            background: rgba(251, 133, 0, 0.1);
-            padding: 1rem 2rem;
-            border-radius: 10px;
-            border: 2px solid #fb8500;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(8px);
+            padding: 1.1rem 2rem;
+            border-radius: 14px;
+            border: 1px solid rgba(200, 162, 76, 0.4);
+            text-decoration: none;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            animation: softpulse 3s ease-in-out infinite;
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 10px rgba(251, 133, 0, 0.3); }
-            50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(251, 133, 0, 0.6); }
+        .contact-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+            box-shadow: 0 10px 30px rgba(200, 162, 76, 0.3);
+        }
+
+        @keyframes softpulse {
+            0%, 100% { box-shadow: 0 0 0 rgba(200, 162, 76, 0); }
+            50% { box-shadow: 0 0 22px rgba(200, 162, 76, 0.25); }
         }
 
         .hours {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #8ecae6;
-            margin: 2rem 0;
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: #b9c8dc;
+            margin: 0 0 3rem;
             line-height: 2;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 16px;
+            padding: 1.5rem 2.5rem;
+        }
+
+        .hours strong {
+            color: var(--gold);
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         iframe {
             width: 100%;
             max-width: 800px;
             height: 400px;
-            border: 3px solid #fb8500;
-            border-radius: 15px;
-            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+            border: 0;
+            border-radius: 16px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(200, 162, 76, 0.5);
         }
 
-        /* Footer */
+        /* ============ Footer ============ */
         footer {
-            background: #003566;
-            padding: 3rem 2rem;
-            color: #8ecae6;
+            background: #0A1420;
+            padding: 3.5rem 2rem 2.5rem;
+            color: #b9c8dc;
         }
 
         .whatsapp-btn {
             display: inline-flex;
             align-items: center;
             gap: 1rem;
-            background: #25D366;
+            background: linear-gradient(135deg, #25D366, #1AA36F);
             color: white;
-            padding: 1.5rem 3rem;
+            padding: 1.2rem 2.6rem;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 1.3rem;
-            transition: all 0.3s;
-            animation: bounce 2s ease-in-out infinite;
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 8px 28px rgba(37, 211, 102, 0.35);
         }
 
         .whatsapp-btn:hover {
-            background: #20BA5A;
-            transform: scale(1.1);
-            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.6);
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+            transform: translateY(-4px) scale(1.04);
+            box-shadow: 0 14px 40px rgba(37, 211, 102, 0.55);
         }
 
         .whatsapp-icon {
-            font-size: 2rem;
+            font-size: 1.6rem;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
+        .footer-note {
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .footer-copy {
+            margin-top: 0.6rem;
+            font-size: 0.8rem;
+            color: #6f7f93;
+        }
+
+        /* ============ Floating contact buttons ============ */
+        .floating-btns {
+            position: fixed;
+            right: 1.2rem;
+            bottom: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            z-index: 999;
+        }
+
+        .fab {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            text-decoration: none;
+            color: var(--white);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .fab:hover {
+            transform: translateY(-4px) scale(1.08);
+        }
+
+        .fab-whatsapp { background: linear-gradient(135deg, #25D366, #1AA36F); }
+        .fab-phone    { background: linear-gradient(135deg, var(--royal), #4a7dff); }
+
+        .fab-top {
+            background: linear-gradient(135deg, var(--gold), #a8853b);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+        }
+
+        .fab-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* ============ Reduced motion ============ */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* ============ Responsive ============ */
+        @media (max-width: 900px) {
             nav ul {
-                gap: 1rem;
+                gap: 1.4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 0.7rem 1.2rem;
             }
 
-            nav a {
-                font-size: 0.9rem;
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-right {
+                position: fixed;
+                top: 0;
+                right: 0;
+                height: 100vh;
+                width: min(78vw, 320px);
+                background: rgba(13, 27, 42, 0.97);
+                backdrop-filter: blur(14px);
+                flex-direction: column;
+                justify-content: center;
+                gap: 2.5rem;
+                transform: translateX(100%);
+                transition: transform 0.4s ease;
+                box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+            }
+
+            .nav-right.open {
+                transform: translateX(0);
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            nav ul a {
+                font-size: 1.2rem;
+            }
+
+            .brand-name {
+                font-size: 1.1rem;
+                letter-spacing: 2px;
+            }
+
+            .brand-tag {
+                font-size: 0.44rem;
+                letter-spacing: 1.1px;
+            }
+
+            .brand-logo {
+                width: 40px;
+                height: 40px;
+            }
+
+            section {
+                padding: 6rem 1.2rem 4rem;
             }
 
             #about h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
+                letter-spacing: 4px;
             }
 
             #about p {
                 font-size: 1rem;
             }
 
-            .logo {
-                width: 200px;
-                height: 200px;
-                font-size: 2rem;
+            .hero-ctas {
+                width: 100%;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .stat-card {
+                min-width: 140px;
+                padding: 1.1rem 1.4rem;
+            }
+
+            .logo-frame img {
+                width: 130px;
+                height: 130px;
             }
 
             #services h2, #contact h2 {
-                font-size: 2rem;
+                font-size: 1.9rem;
             }
 
             .contact-item {
-                font-size: 1.1rem;
+                font-size: 1rem;
+                width: 100%;
+            }
+
+            .hours {
+                padding: 1.2rem 1.4rem;
+                font-size: 1rem;
+            }
+
+            iframe {
+                height: 320px;
+            }
+
+            .whatsapp-btn {
+                font-size: 1.05rem;
+                padding: 1rem 2rem;
             }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    <nav id="navbar">
+        <a href="#about" class="brand" aria-label="ACCTAB home">
+            <img src="acctab.jpg" alt="ACCTAB - Accounting, Tax & Business Solutions logo" class="brand-logo">
+            <span class="brand-text">
+                <span class="brand-name">ACCTAB</span>
+                <span class="brand-tag">A BICA Registered Non Audit Firm</span>
+            </span>
+        </a>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+
+        <div class="nav-right" id="navMenu">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="https://wa.me/26773263337?text=Hi%2C%20I%20would%20like%20to%20book%20a%20free%20consultation." class="nav-cta" target="_blank" rel="noopener">Book Consultation</a></li>
+            </ul>
+        </div>
     </nav>
 
     <!-- Section 1: About -->
     <section id="about">
-        <h1>ACCTAB</h1>
-        <p>
+        <span class="hero-eyebrow reveal">BICA Registered Non-Audit Firm</span>
+        <h1 class="reveal">ACCTAB</h1>
+        <p class="reveal">
             ACCTAB is a forward-thinking accounting firm dedicated to delivering precise, reliable, and strategically driven financial services for businesses of all sizes. With a commitment to transparency and long-term client success, ACCTAB provides tailored accounting solutions that empower organizations to make confident, data-backed decisions.
         </p>
-        <img src="acctab.jpg" alt="ACCTAB / Bica logo" width="170" height="170" style="border-radius: 50px";>
+
+        <div class="hero-badges reveal">
+            <span class="badge"><span class="tick">✔</span> BICA Registered</span>
+            <span class="badge"><span class="tick">✔</span> Experienced Professionals</span>
+            <span class="badge"><span class="tick">✔</span> Confidential</span>
+            <span class="badge"><span class="tick">✔</span> Fast Turnaround</span>
+            <span class="badge"><span class="tick">✔</span> SME Specialists</span>
+        </div>
+
+        <div class="hero-ctas reveal">
+            <a href="https://wa.me/26773263337?text=Hi%2C%20I%20would%20like%20to%20book%20a%20free%20consultation." class="btn-primary" target="_blank" rel="noopener">Book Free Consultation <span class="arrow">→</span></a>
+            <a href="https://wa.me/26773263337?text=Hi%2C%20I%20would%20like%20to%20request%20a%20quote." class="btn-secondary" target="_blank" rel="noopener">Request Quote</a>
+        </div>
+
+        <div class="hero-stats reveal">
+            <div class="stat-card">
+                <div class="stat-number"><span class="counter" data-target="6">0</span></div>
+                <div class="stat-label">Core Services</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number"><span class="counter" data-target="5">0</span></div>
+                <div class="stat-label">Working Days Open</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number"><span class="counter" data-target="100">0</span>%</div>
+                <div class="stat-label">Confidential</div>
+            </div>
+        </div>
+
+        <div class="logo-frame reveal">
+            <img src="acctab.jpg" alt="ACCTAB / BICA logo" width="170" height="170">
+        </div>
     </section>
 
     <!-- Section 2: Services -->
     <section id="services">
-        <h2>Our Services</h2>
+        <div class="section-eyebrow reveal">What We Do</div>
+        <h2 class="reveal">Our Services</h2>
+        <div class="gold-divider reveal"></div>
         <div class="service-grid">
-            <div class="service-card">
+            <div class="service-card reveal">
+                <span class="service-icon">📊</span>
                 <h3>Accounting</h3>
                 <p>
-                    Bica's accounting services involve preparing, reviewing, and maintaining accurate financial records to ensure businesses have a clear and reliable picture of their financial position. These services support informed decision-making by producing compliant statements, tracking financial performance, and giving clients timely insights into their operations.
+                    Acctab's accounting services involve preparing, reviewing, and maintaining accurate financial records to ensure businesses have a clear and reliable picture of their financial position. These services support informed decision-making by producing compliant statements, tracking financial performance, and giving clients timely insights into their operations.
                 </p>
-                <a href="https://wa.me/26773263337?text=Hi%2C%20I%20would%20like%20more%20details%20about%20your%20Accounting%20services." class="details-btn" target="_blank">Get More Details</a>
+                <a href="https://wa.me/26773263337?text=Hi%2C%20I%20would%20like%20more%20details%20about%20your%20Accounting%20services." class="details-btn" target="_blank" rel="noopener">Get More Details</a>
             </div>
-            <div class="service-card">
+            <div class="service-card reveal">
+                <span class="service-icon">💼</span>
                 <h3>Payroll</h3>
                 <p>
-                    Bica's payroll services manage the entire salary administration process, ensuring that employees are paid accurately, on time, and in accordance with statutory requirements. This includes handling deductions, taxes, compliance reporting, and payroll records so businesses can reduce administrative burden and avoid costly errors.
+                    Acctab's payroll services manage the entire salary administration process, ensuring that employees are paid accurately, on time, and in accordance with statutory requirements. This includes handling deductions, taxes, compliance reporting, and payroll records so businesses can reduce administrative burden and avoid costly errors.
                 </p>
-                <a href="https://wa.me/26773263337?text=Hi%2C%20I%20would%20like%20more%20details%20about%20your%20Payroll%20services." class="details-btn" target="_blank">Get More Details</a>
+                <a href="https://wa.me/26773263337?text=Hi%2C%20I%20would%20like%20more%20details%20about%20your%20Payroll%20services." class="details-btn" target="_blank" rel="noopener">Get More Details</a>
             </div>
-            <div class="service-card">
+            <div class="service-card reveal">
+                <span class="service-icon">📚</span>
                 <h3>Bookkeeping</h3>
                 <p>
-                    Bica's bookkeeping services provide systematic recording and organization of daily financial transactions, ensuring that all income, expenses, and financial movements are captured correctly. By maintaining clean and up-to-date books, businesses gain the foundation needed for smooth audits, accurate reporting, and better financial management.
+                    Acctab's bookkeeping services provide systematic recording and organization of daily financial transactions, ensuring that all income, expenses, and financial movements are captured correctly. By maintaining clean and up-to-date books, businesses gain the foundation needed for smooth audits, accurate reporting, and better financial management.
                 </p>
-                <a href="https://wa.me/26773263337?text=Hi%2C%20I%20would%20like%20more%20details%20about%20your%20Bookkeeping%20services." class="details-btn" target="_blank">Get More Details</a>
+                <a href="https://wa.me/26773263337?text=Hi%2C%20I%20would%20like%20more%20details%20about%20your%20Bookkeeping%20services." class="details-btn" target="_blank" rel="noopener">Get More Details</a>
             </div>
-            <div class="service-card">
+            <div class="service-card reveal">
+                <span class="service-icon">🧭</span>
                 <h3>Accounting Advisory Services</h3>
                 <p>
-                    Bica's accounting advisory services help businesses interpret and apply complex accounting standards, ensuring financial statements are accurate, compliant, and aligned with regulatory frameworks. These services also guide clients through specialized transactions—such as mergers, restructures, or new reporting requirements—so they can make confident financial decisions.
+                    Acctab's accounting advisory services help businesses interpret and apply complex accounting standards, ensuring financial statements are accurate, compliant, and aligned with regulatory frameworks. These services also guide clients through specialized transactions—such as mergers, restructures, or new reporting requirements—so they can make confident financial decisions.
                 </p>
-                <a href="https://wa.me/26773263337?text=Hi%2C%20I%20would%20like%20more%20details%20about%20your%20Accounting%20Advisory%20services." class="details-btn" target="_blank">Get More Details</a>
+                <a href="https://wa.me/26773263337?text=Hi%2C%20I%20would%20like%20more%20details%20about%20your%20Accounting%20Advisory%20services." class="details-btn" target="_blank" rel="noopener">Get More Details</a>
             </div>
-            <div class="service-card">
+            <div class="service-card reveal">
+                <span class="service-icon">🧾</span>
                 <h3>Tax Services</h3>
                 <p>
-                    Bica provides comprehensive tax services that include tax planning, compliance, and advisory to help businesses meet their legal obligations while optimizing their tax position. The firm ensures clients remain fully aligned with evolving tax regulations, reducing risk and identifying opportunities for savings.
+                    Acctab provides comprehensive tax services that include tax planning, compliance, and advisory to help businesses meet their legal obligations while optimizing their tax position. The firm ensures clients remain fully aligned with evolving tax regulations, reducing risk and identifying opportunities for savings.
                 </p>
-                <a href="https://wa.me/26773263337?text=Hi%2C%20I%20would%20like%20more%20details%20about%20your%20Tax%20services." class="details-btn" target="_blank">Get More Details</a>
+                <a href="https://wa.me/26773263337?text=Hi%2C%20I%20would%20like%20more%20details%20about%20your%20Tax%20services." class="details-btn" target="_blank" rel="noopener">Get More Details</a>
             </div>
-            <div class="service-card">
+            <div class="service-card reveal">
+                <span class="service-icon">🏛️</span>
                 <h3>Company Secretarial Services</h3>
                 <p>
-                    Bica's company secretarial services ensure that businesses meet all corporate governance and statutory filing requirements, maintaining full compliance with local company laws. This includes maintaining company records, preparing resolutions, managing annual returns, and supporting directors with regulatory guidance to keep the business legally sound and well-organized.
+                    Acctab's company secretarial services ensure that businesses meet all corporate governance and statutory filing requirements, maintaining full compliance with local company laws. This includes maintaining company records, preparing resolutions, managing annual returns, and supporting directors with regulatory guidance to keep the business legally sound and well-organized.
                 </p>
-                <a href="https://wa.me/26773263337?text=Hi%2C%20I%20would%20like%20more%20details%20about%20your%20Company%20Secretarial%20services." class="details-btn" target="_blank">Get More Details</a>
-            
+                <a href="https://wa.me/26773263337?text=Hi%2C%20I%20would%20like%20more%20details%20about%20your%20Company%20Secretarial%20services." class="details-btn" target="_blank" rel="noopener">Get More Details</a>
             </div>
         </div>
     </section>
 
     <!-- Section 3: Contact -->
     <section id="contact">
-        <h2>Contact Us</h2>
-        <div class="contact-info">
-            <div class="contact-item">📞 +267 73 263 337</div>
+        <div class="section-eyebrow reveal">Get In Touch</div>
+        <h2 class="reveal">Contact Us</h2>
+        <div class="gold-divider reveal"></div>
+        <div class="contact-info reveal">
+            <a href="tel:+26773263337" class="contact-item">📞 +267 73 263 337</a>
             <div class="contact-item">📍 Plot 14014 Unit 8, Francistown, Botswana</div>
-            <div class="contact-item">✉️ acctab@acctabbw.com</div>
+            <a href="mailto:acctab@acctabbw.com" class="contact-item">✉️ acctab@acctabbw.com</a>
         </div>
-        <div class="hours">
-            <strong>Opening Hours:</strong><br>
+        <div class="hours reveal">
+            <strong>Opening Hours</strong><br>
             Monday - Thursday: 08:00 - 17:00<br>
             Friday: 08:00 - 16:00<br>
             Open 5 Working Days
         </div>
-        
-        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1rDkRr_GlROXBlM6Wz5VYIlx0pQUOCKo&ehbc=2E312F"  width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <iframe class="reveal" src="https://www.google.com/maps/d/u/0/embed?mid=1rDkRr_GlROXBlM6Wz5VYIlx0pQUOCKo&ehbc=2E312F" title="ACCTAB office location map" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
 
     <!-- Footer -->
     <footer>
-        <a href="https://wa.me/26773263337" class="whatsapp-btn" target="_blank">
+        <a href="https://wa.me/26773263337" class="whatsapp-btn" target="_blank" rel="noopener">
             <span class="whatsapp-icon">💬</span>
             Contact Us on WhatsApp
         </a>
+        <div class="footer-note">ACCTAB — A BICA Registered Non Audit Firm</div>
+        <div class="footer-copy">© <span id="year"></span> ACCTAB. Accounting, Tax &amp; Business Solutions (Pty) Ltd. All rights reserved.</div>
     </footer>
+
+    <!-- Floating contact buttons -->
+    <div class="floating-btns">
+        <button class="fab fab-top" id="backToTop" aria-label="Back to top">↑</button>
+        <a href="tel:+26773263337" class="fab fab-phone" aria-label="Call us">📞</a>
+        <a href="https://wa.me/26773263337" class="fab fab-whatsapp" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+    </div>
+
+    <script>
+        // Sticky nav: transparent until scrolling
+        const navbar = document.getElementById('navbar');
+        const backToTop = document.getElementById('backToTop');
+
+        function onScroll() {
+            const scrolled = window.scrollY > 40;
+            navbar.classList.toggle('scrolled', scrolled);
+            backToTop.classList.toggle('show', window.scrollY > 500);
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+
+        // Mobile menu
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            const open = navMenu.classList.toggle('open');
+            hamburger.classList.toggle('open', open);
+            hamburger.setAttribute('aria-expanded', open);
+        });
+
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('open');
+                hamburger.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Back to top
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Scroll reveal animations
+        const revealObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Animated count-up statistics
+        function countUp(el) {
+            const target = +el.dataset.target;
+            const duration = 1600;
+            const start = performance.now();
+
+            function step(now) {
+                const progress = Math.min((now - start) / duration, 1);
+                el.textContent = Math.round(target * (1 - Math.pow(1 - progress, 3)));
+                if (progress < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+        }
+
+        const counterObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    countUp(entry.target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+
+        // Footer year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

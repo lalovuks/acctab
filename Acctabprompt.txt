@@ -1,0 +1,754 @@
+Premium Accounting Firm Website Prompt (ACCTAB)
+ROLE
+
+You are an award-winning UI/UX designer, branding specialist, SEO expert, CRO (Conversion Rate Optimization) consultant, and front-end architect specializing in premium financial service websites.
+
+Your objective is to design a world-class website for ACCTAB, a BICA Registered Non-Audit Firm, that immediately communicates professionalism, trust, expertise, compliance, and financial excellence.
+
+The design should feel comparable to Deloitte, PwC, KPMG, EY, Grant Thornton, and top boutique accounting firms while remaining modern, elegant, and approachable for SMEs, startups, corporations, NGOs, and individuals.
+
+The website should be designed to maximize:
+
+Client enquiries
+Phone calls
+WhatsApp conversations
+Quote requests
+Consultation bookings
+Google SEO rankings
+Google EEAT signals
+Page speed
+Mobile usability
+Trust
+Conversion rate
+Overall Style
+
+Create a premium corporate financial aesthetic.
+
+Think:
+
+Luxury Financial Institution +
+Modern SaaS +
+High-End Law Firm +
+Swiss Banking Interface
+
+Design keywords:
+
+Elegant
+Spacious
+Sophisticated
+Premium
+Minimal
+Professional
+Trustworthy
+Intelligent
+Corporate
+Clean
+Refined
+
+Never use clutter.
+
+Every section should breathe.
+
+Everything aligned perfectly.
+
+Excellent typography hierarchy.
+
+Soft shadows.
+
+Rounded corners (12-16px)
+
+Glass effects used subtly.
+
+Beautiful white space.
+
+Color Palette
+
+Primary
+
+Deep Navy
+#0D1B2A
+
+Secondary
+
+Royal Blue
+#1E5EFF
+
+Accent Gold
+
+#C8A24C
+
+Background
+
+White
+#FFFFFF
+
+Light Gray
+
+#F8F9FB
+
+Dark Text
+
+#202124
+
+Muted Text
+
+#666666
+
+Success Green
+
+#1AA36F
+
+Buttons
+
+Royal Blue gradient
+
+Hover:
+Gold accent glow
+
+Typography
+
+Headings
+
+Poppins ExtraBold
+
+Body
+
+Inter
+
+Numbers
+
+IBM Plex Sans
+
+Large headings
+
+56px Desktop
+
+44 Tablet
+
+32 Mobile
+
+Hero Section
+
+Full width.
+
+Professional background image of:
+
+accountants
+financial advisors
+business meeting
+charts
+modern office
+
+Dark navy overlay.
+
+Headline
+
+"Helping Businesses Grow with Trusted Accounting & Financial Expertise"
+
+Subheadline
+
+BICA Registered Non-Audit Firm providing professional accounting, bookkeeping, tax compliance, payroll, financial reporting, business advisory, and corporate services.
+
+Primary CTA
+
+Book Free Consultation
+
+Secondary CTA
+
+Request Quote
+
+Include:
+
+✔ BICA Registered
+
+✔ Experienced Professionals
+
+✔ Confidential
+
+✔ Fast Turnaround
+
+✔ SME Specialists
+
+Animated trust badges.
+
+Floating statistics cards.
+
+Sticky Navigation
+
+Logo left
+
+Menu
+
+Home
+
+Services
+
+Industries
+
+About
+
+Resources
+
+Insights
+
+Contact
+
+Book Consultation
+
+Large premium CTA button.
+
+Sticky on scroll.
+
+Transparent until scrolling.
+
+Floating Contact Buttons
+
+WhatsApp
+
+Phone
+
+Book Consultation
+
+Back To Top
+
+Homepage Sections
+
+Hero
+
+Client Logos
+
+Why Choose ACCTAB
+
+Services Grid
+
+Industries Served
+
+Business Growth Statistics
+
+Testimonials
+
+Case Studies
+
+Accounting Process
+
+Meet the Team
+
+Frequently Asked Questions
+
+Latest Articles
+
+Call To Action
+
+Footer
+
+Premium Service Cards
+
+Each card contains
+
+Premium icon
+
+Short summary
+
+Learn More
+
+Hover animation
+
+Services include:
+
+Accounting
+
+Bookkeeping
+
+Payroll
+
+Tax Returns
+
+VAT
+
+Management Accounts
+
+Financial Statements
+
+Business Registration
+
+Company Secretarial
+
+Business Advisory
+
+Cloud Accounting
+
+Budgeting
+
+Cash Flow Planning
+
+Internal Controls
+
+Financial Consulting
+
+Compliance
+
+Startup Advisory
+
+Why Choose Us Section
+
+Professional icon cards
+
+Reasons include
+
+BICA Registered
+
+Qualified Professionals
+
+Transparent Pricing
+
+Dedicated Support
+
+Industry Expertise
+
+Modern Accounting Technology
+
+Fast Response
+
+Confidential Service
+
+Long-term Partnership
+
+Industries Served
+
+Cards
+
+Construction
+
+Agriculture
+
+Mining
+
+Retail
+
+Manufacturing
+
+Healthcare
+
+Hospitality
+
+NGOs
+
+Professional Services
+
+Transport
+
+Real Estate
+
+Education
+
+Each card links to an SEO landing page.
+
+Testimonials
+
+Large premium cards
+
+Professional photos
+
+Company
+
+Industry
+
+Rating
+
+Results achieved
+
+Carousel animation.
+
+Case Studies
+
+Business problem
+
+Solution
+
+Outcome
+
+Statistics
+
+Graphs
+
+Professional images
+
+Accounting Process
+
+Beautiful timeline
+
+Discovery
+
+Consultation
+
+Planning
+
+Implementation
+
+Reporting
+
+Ongoing Support
+
+Meet The Team
+
+Professional photography
+
+Qualifications
+
+BICA membership
+
+Years Experience
+
+LinkedIn
+
+Biography
+
+FAQ
+
+SEO optimized accordion.
+
+Questions around
+
+Tax
+
+Bookkeeping
+
+Payroll
+
+VAT
+
+BICA
+
+Financial Statements
+
+Compliance
+
+Business Registration
+
+Accounting Costs
+
+Outsourcing
+
+Blog Section
+
+Large featured article.
+
+Smaller article cards.
+
+Categories
+
+Accounting
+
+Tax
+
+Payroll
+
+Business Growth
+
+Compliance
+
+Finance
+
+SME Tips
+
+Botswana Regulations
+
+Call To Action
+
+Dark navy background.
+
+Headline
+
+Ready to Simplify Your Accounting?
+
+Buttons
+
+Book Consultation
+
+Call Us
+
+Request Quote
+
+Footer
+
+Logo
+
+Quick Links
+
+Services
+
+Industries
+
+Resources
+
+Contact
+
+Social Media
+
+Office Hours
+
+Google Map
+
+Privacy Policy
+
+Terms
+
+Cookies
+
+Newsletter
+
+UI Components
+
+Premium buttons
+
+Large radius
+
+Gradient
+
+Smooth hover
+
+Lift animation
+
+Ripple effect
+
+Arrow animation
+
+Cards
+
+Soft shadows
+
+Rounded corners
+
+Glass effect
+
+Hover lift
+
+Icons
+
+Lucide Icons
+
+Animated
+
+Minimal
+
+Forms
+
+Floating labels
+
+Validation
+
+Progress indicator
+
+Professional spacing
+
+Tables
+
+Premium styling
+
+Sticky headers
+
+Sorting
+
+Filtering
+
+Graphs
+
+Animated counters
+
+Charts
+
+Financial visuals
+
+Timeline
+
+Interactive
+
+Animations
+
+GSAP
+
+Fade
+
+Slide
+
+Scale
+
+Stagger
+
+Count-up
+
+Parallax
+
+Hover glow
+
+Mouse movement
+
+Scroll reveal
+
+Never excessive.
+
+Fast.
+
+Smooth.
+
+Professional.
+
+Mobile Design
+
+Fully responsive.
+
+Touch-friendly.
+
+Large buttons.
+
+Sticky CTA.
+
+Bottom contact bar.
+
+Readable typography.
+
+Optimized spacing.
+
+Performance
+
+95+ Lighthouse
+
+Fast loading
+
+Lazy images
+
+Modern image formats
+
+Minimal JavaScript
+
+Critical CSS
+
+Preloading
+
+Compression
+
+Accessibility WCAG AA
+
+SEO Architecture
+
+Create a complete SEO implementation.
+
+Include:
+
+Proper HTML5 semantic structure
+One H1 only
+H2 hierarchy
+H3 hierarchy
+Breadcrumbs
+Canonical URL
+Open Graph
+Twitter Cards
+Meta Description
+Meta Keywords (legacy)
+Robots directives
+XML Sitemap
+Image ALT text
+Internal linking
+External authority links where appropriate
+FAQ Schema
+Organization Schema
+Local Business Schema
+Financial Service Schema
+Breadcrumb Schema
+Article Schema
+Service Schema
+Review Schema
+Person Schema
+Website Schema
+SearchAction Schema
+ContactPoint Schema
+AggregateRating Schema
+Google Business Profile integration
+EEAT optimization
+Core Web Vitals optimization
+SEO Content Strategy
+
+Every service should have its own landing page targeting keywords such as:
+
+Accountant in Botswana
+Accounting Services Botswana
+Bookkeeping Botswana
+Tax Consultant Botswana
+Payroll Services Botswana
+BICA Registered Accountant
+Financial Statements Botswana
+SME Accounting Botswana
+VAT Registration Botswana
+Business Advisory Botswana
+Corporate Accounting Botswana
+Cloud Accounting Botswana
+Startup Accountant Botswana
+Company Registration Botswana
+
+Each page should include:
+
+Service overview
+Benefits
+Process
+Pricing guidance (where appropriate)
+FAQs
+Related articles
+Internal links
+Strong CTAs
+Trust Signals
+
+Prominently display:
+
+BICA Registered Non-Audit Firm
+Professional certifications
+Years of experience
+Number of clients served
+Industries supported
+Client testimonials
+Case studies
+Secure data handling
+Confidentiality commitment
+Modern accounting software expertise
+Fast turnaround times
+Conversion Optimization
+
+Every page should include:
+
+Primary CTA above the fold
+Secondary CTA mid-page
+Contact form
+Click-to-call button
+WhatsApp button
+Consultation booking
+Trust badges
+Client logos
+FAQ
+Testimonials
+Sticky navigation
+Exit-intent lead capture (where appropriate)
+Clear value propositions
+Minimal friction forms
+Technical Requirements
+Semantic HTML5
+Accessible ARIA labels
+Responsive CSS Grid and Flexbox
+Optimized images (WebP/AVIF)
+Lazy loading
+Structured data (JSON-LD)
+Fast, clean code
+Secure forms with validation
+Analytics integration (Google Analytics 4, Google Search Console)
+Cookie consent banner
+Privacy policy and terms pages
+XML sitemap and robots.txt
+Desired Outcome
+
+The final website should make visitors immediately think:
+
+"This firm is highly professional."
+"I trust them with my business finances."
+"Booking a consultation is easy."
+"They understand businesses like mine."
+"This is a premium accounting firm."
+
+The design should balance authority with approachability, using clean layouts, strong visual hierarchy, and persuasive content to convert visitors into long-term clients while maximizing search visibility and meeting modern SEO and accessibility standards.
