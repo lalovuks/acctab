@@ -95,6 +95,63 @@
             flex-shrink: 0;
         }
 
+        /* ============ Page loader / screen transition ============ */
+        .page-loader {
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            background: var(--navy);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.3rem;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.45s ease, visibility 0.45s ease;
+        }
+
+        .page-loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .loader-ring {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            border: 3px solid rgba(200, 162, 76, 0.2);
+            border-top-color: var(--gold);
+            animation: loaderspin 0.9s linear infinite;
+        }
+
+        .loader-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 1.1rem;
+            letter-spacing: 6px;
+            color: var(--white);
+        }
+
+        .loader-text::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background: var(--gold);
+            margin: 0.6rem auto 0;
+            border-radius: 2px;
+            animation: loaderbar 1.4s ease-in-out infinite;
+        }
+
+        @keyframes loaderspin { to { transform: rotate(360deg); } }
+
+        @keyframes loaderbar {
+            0%, 100% { width: 24px; opacity: 0.5; }
+            50% { width: 64px; opacity: 1; }
+        }
+
         /* ============ Navigation ============ */
         nav {
             position: fixed;
@@ -661,6 +718,46 @@
             transform: translateY(-2px);
         }
 
+        /* ============ Insights / Learn More section ============ */
+        #insights {
+            background: var(--white);
+            color: var(--dark-text);
+            content-visibility: auto;
+            contain-intrinsic-size: auto 1200px;
+        }
+
+        #insights::before {
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260' viewBox='0 0 260 260'%3E%3Ctext x='26' y='74' font-family='Poppins,Arial,sans-serif' font-size='13' font-weight='700' letter-spacing='4' fill='%230D1B2A' transform='rotate(-30 26 74)'%3EACCTAB%3C/text%3E%3Ctext x='156' y='204' font-family='Poppins,Arial,sans-serif' font-size='13' font-weight='700' letter-spacing='4' fill='%230D1B2A' transform='rotate(-30 156 204)'%3EACCTAB%3C/text%3E%3Cpath d='M0,-9 C2.5,-9 4,-7 4,-4.5 C7,-4.5 9,-2.5 9,0 C9,2.5 7,4.5 4,4.5 C4,7 2.5,9 0,9 C-2.5,9 -4,7 -4,4.5 C-7,4.5 -9,2.5 -9,0 C-9,-2.5 -7,-4.5 -4,-4.5 C-4,-7 -2.5,-9 0,-9 Z' fill='%23C8A24C' transform='translate(196,58)'/%3E%3Cpath d='M66,176 l7,11 -7,11 -7,-11 Z' fill='%230D1B2A'/%3E%3Ccircle cx='130' cy='128' r='3' fill='%23C8A24C'/%3E%3C/svg%3E");
+        }
+
+        #insights h2 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+            color: var(--navy);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .insight-cat {
+            display: inline-block;
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--royal);
+            background: rgba(30, 94, 255, 0.08);
+            padding: 0.35rem 0.85rem;
+            border-radius: 30px;
+            margin-bottom: 1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .insights-cta {
+            margin-top: 2.6rem;
+        }
+
         /* ============ Section 3 - Contact ============ */
         #contact {
             background: linear-gradient(160deg, var(--navy-2) 0%, var(--navy) 100%);
@@ -785,6 +882,27 @@
             background: #0A1420;
             padding: 3.5rem 2rem 2.5rem;
             color: #b9c8dc;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.6rem;
+            margin: 2rem 0 0;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: #b9c8dc;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.92rem;
+            transition: color 0.25s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
         }
 
         .whatsapp-btn {
@@ -1022,6 +1140,12 @@
     </style>
 </head>
 <body>
+    <!-- Page loader -->
+    <div class="page-loader" id="pageLoader" aria-hidden="true">
+        <div class="loader-ring"></div>
+        <span class="loader-text">ACCTAB</span>
+    </div>
+
     <!-- SVG icon library -->
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
         <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 16v-5"/><path d="M12 16V8"/><path d="M17 16v-3"/></symbol>
@@ -1056,7 +1180,8 @@
         <div class="nav-right" id="navMenu">
             <ul>
                 <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/learn-more">Learn More</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="https://wa.me/26773263337?text=Hi%2C%20I%20would%20like%20to%20book%20a%20free%20consultation." class="nav-cta" target="_blank" rel="noopener">Book Consultation</a></li>
             </ul>
@@ -1159,6 +1284,41 @@
                 <a href="https://wa.me/26773263337?text=Hi%2C%20I%20would%20like%20more%20details%20about%20your%20Company%20Secretarial%20services." class="details-btn" target="_blank" rel="noopener">Get More Details <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
             </div>
         </div>
+        <a href="/services" class="btn-primary insights-cta reveal">Explore All Services <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </section>
+
+    <!-- Learn More / Insights -->
+    <section id="insights">
+        <div class="section-eyebrow reveal">Learn More</div>
+        <h2 class="reveal">Insights &amp; Guides</h2>
+        <div class="gold-divider reveal"></div>
+        <div class="service-grid">
+            <div class="service-card reveal">
+                <span class="insight-cat">Accounting</span>
+                <h3>Complete Guide to Business Accounting in Botswana</h3>
+                <p>
+                    Financial statements, BURS compliance, common SME mistakes and growth strategy — everything Botswana business owners need to know about professional accounting in 2026.
+                </p>
+                <a href="/articles/accounting-services-botswana-guide" class="details-btn">Read Guide <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+            <div class="service-card reveal">
+                <span class="insight-cat">Tax Services</span>
+                <h3>Botswana Business Tax Guide (2026)</h3>
+                <p>
+                    Corporate income tax, VAT, PAYE, withholding tax, BURS deadlines and penalties — the complete tax guide for Botswana businesses, with smart, legal tax planning tips.
+                </p>
+                <a href="/articles/botswana-business-tax-guide" class="details-btn">Read Guide <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+            <div class="service-card reveal">
+                <span class="insight-cat">Payroll</span>
+                <h3>Complete Payroll Guide for Employers in Botswana</h3>
+                <p>
+                    PAYE, deductions, leave, employee benefits and payroll compliance explained step by step — plus why outsourcing payroll saves Botswana employers time and money.
+                </p>
+                <a href="/articles/payroll-guide-botswana" class="details-btn">Read Guide <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+        </div>
+        <a href="/learn-more" class="btn-primary insights-cta reveal">Visit the Learn More Hub <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
     </section>
 
     <!-- Section 3: Contact -->
@@ -1197,6 +1357,12 @@
             <svg class="wa-glyph" aria-hidden="true"><use href="#i-wa"/></svg>
             Contact Us on WhatsApp
         </a>
+        <ul class="footer-links">
+            <li><a href="#about">Home</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/learn-more">Learn More</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
         <div class="footer-note">ACCTAB — A BICA Registered Non Audit Firm</div>
         <div class="footer-copy">© <span id="year"></span> ACCTAB. Accounting, Tax &amp; Business Solutions (Pty) Ltd. All rights reserved.</div>
     </footer>
@@ -1209,6 +1375,36 @@
     </div>
 
     <script>
+        // Page loader: fade out on load, fade in when leaving to another page
+        const pageLoader = document.getElementById('pageLoader');
+
+        function hideLoader() {
+            pageLoader.classList.add('hidden');
+        }
+
+        if (document.readyState === 'complete') {
+            hideLoader();
+        } else {
+            window.addEventListener('load', hideLoader);
+            setTimeout(hideLoader, 2500);
+        }
+
+        window.addEventListener('pageshow', (e) => {
+            if (e.persisted) hideLoader();
+        });
+
+        document.addEventListener('click', (e) => {
+            const link = e.target.closest('a');
+            if (!link) return;
+            const href = link.getAttribute('href');
+            if (!href || href.charAt(0) === '#' || link.target === '_blank') return;
+            if (/^(https?:|mailto:|tel:|whatsapp:)/i.test(href) && link.host !== location.host) return;
+            if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+            e.preventDefault();
+            pageLoader.classList.remove('hidden');
+            setTimeout(() => { location.href = link.href; }, 380);
+        });
+
         // Sticky nav: transparent until scrolling (rAF-throttled to avoid scroll jank)
         const navbar = document.getElementById('navbar');
         const backToTop = document.getElementById('backToTop');
