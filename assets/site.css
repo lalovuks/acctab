@@ -284,6 +284,7 @@ nav ul a.active::after { width: 100%; }
 
 /* Table of contents */
 .toc {
+    display: none;
     background: var(--white);
     border: 1px solid rgba(13, 27, 42, 0.08);
     border-left: 3px solid var(--gold);
